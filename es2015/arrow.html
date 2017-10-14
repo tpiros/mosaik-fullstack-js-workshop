@@ -1,0 +1,45 @@
+<button id="greet">Greet</button>
+<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    
+    var person = {
+      name: 'Joe',
+      age: 21,
+
+      greet: function greet() {
+        // document.getElementById('greet').addEventListener('click', function () {
+        //   return this.display('Well hello there ' + this.name);
+        // });
+        document.getElementById('greet').addEventListener('click', (function () {
+          return this.display('Well hello there ' + this.name);
+        }).bind(this));
+      },
+
+      display: function display(message) {
+        console.log(message + '. You are ' + this.age + ' years old.');
+      }
+    };
+    person.greet();
+  });
+
+    // person.greet();
+    // const person = {
+    //   name: 'Joe',
+    //   age: 21,
+
+    //   greet: function greet() {
+    //     document.getElementById('greet').addEventListener('click',  () => {
+    //       // console.log(this);
+    //       return this.display('Well hello there ' + this.name);
+    //     });
+    //   },
+
+    //   display: function display(message) {
+    //     console.log(message + '. You are ' + this.age + ' years old.');
+    //   }
+    // };
+
+    // person.greet();
+
+  // });
+</script>
